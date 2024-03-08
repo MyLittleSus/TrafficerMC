@@ -7,7 +7,7 @@
     <div class="titlebar draggable">
       <div class=" center-elements">
         <img class="icon-sm" src="./assets/icons/icon.png">
-        <label>TrafficerMC</label>
+        <label>HyperBots</label>
         <label id="topBarVersion" class="p-1"></label>
       </div>
       <div class="nodrag center-elements">
@@ -17,12 +17,12 @@
     </div>
     <div class="sidebar">
         <ul class="flex-colum flex tab-selectors" style="border: none; opacity: 1;">
-        <button class="button tab active" onclick="openTab('general')">General</button>
-        <button id="btnBotting" class="button tab" onclick="openTab('botting')">Botting</button>
-        <button class="button tab" onclick="openTab('scripting')">Scripting</button>
-        <button class="button tab" onclick="openTab('proxyTab')">Proxy</button>
-        <button class="button tab" onclick="openTab('settings')">Settings</button>
-        <button class="button tab" onclick="openTab('about')">About</button>
+        <button class="button tab active" onclick="openTab('general')">Основное</button>
+        <button id="btnBotting" class="button tab" onclick="openTab('botting')">Боты</button>
+        <button class="button tab" onclick="openTab('scripting')">Скрипты</button>
+        <button class="button tab" onclick="openTab('proxyTab')">Прокси</button>
+        <button class="button tab" onclick="openTab('settings')">Настройки</button>
+        <button class="button tab" onclick="openTab('about')">Понос</button>
       </ul>
     </div>
     <div class="contentArea">
@@ -30,7 +30,7 @@
         <div class="flex">
           <div id="usernameDiv" >
 
-            <span class="label-text"> Username:</span>
+            <span class="label-text"> Никнейм:</span>
 
             <input id="accountFilePath" type="file" accept=".txt" class="" hidden>
             <label id="usernameFileSelector" class="select-file" for="accountFilePath" hidden></label>
@@ -38,34 +38,34 @@
             <input type="text" id="botUsename" class="text-input" placeholder="username">
 
             <select id="usernameMethod" class="select-input">
-              <option value="default">Default</option>
-              <option value="random">Random</option>
-              <option value="legit">Legit</option>
-              <option value="file">File</option>
+              <option value="default">Обычный</option>
+              <option value="random">Рандомный</option>
+              <option value="legit">Легитный</option>
+              <option value="file">ИзФайла</option>
             </select>
           
           </div>
 
           <div id="easymcDiv" hidden>
-            <span class="label-text"> Alt Token:</span>
-            <input type="text" id="easymcAuthToken" class="text-input" placeholder="EasyMC alt token">
+            <span class="label-text"> Токен альт аккаунта:</span>
+            <input type="text" id="easymcAuthToken" class="text-input" placeholder="EasyMC Токен">
           </div>
 
           <div class="m-4">
-            <span class="label-text"> Auth Type:</span>
+            <span class="label-text"> Тип аккаунта:</span>
             <select id="botAuthType" class="select-input">
-              <option value="">Cracked</option>
-              <option value="microsoft">Microsoft</option>
+              <option value="">Пиратка</option>
+              <option value="microsoft">Лицензия</option>
               <option value="easymc">EasyMC</option>
             </select>
           </div>
         </div>
         <div class="mu-4">
-          <span class="label-text"> Server address:</span>
+          <span class="label-text"> IP Сервера:</span>
           <input type="text" id="botConnectIp" class="text-input" placeholder="localhost:25565">
-          <span class="label-text"> Version:</span>
+          <span class="label-text"> Версия:</span>
           <select id="botversion" class="select-input">
-            <option value="">Version Auto</option>
+            <option value="">Авто</option>
             <option value="1.20.1">1.20.1</option>
             <option value="1.20">1.20</option>
             <option value="1.19.4">1.19.4</option>
@@ -107,44 +107,44 @@
           </select>
         </div>
         <div class="mu-4">
-          <span class="label-text"> Max accounts:</span>
+          <span class="label-text"> Макс. аккаунтов:</span>
           <input type="number" min="1" id="botCount" class="text-input" placeholder="1">
         </div>
         <div class="mu-4">
-          <span class="label-text"> Join delay:</span>
+          <span class="label-text"> Задержка присоединения:</span>
           <input type="number" id="joinDelay" class="text-input" placeholder="1000 (ms)">
         </div>
         <div class="mu-4">
-          <span class="label-text"> Join message:</span>
+          <span class="label-text"> Сообщение при заходе на серв:</span>
           <input type="text" id="joinMessage" class="text-input" placeholder="/register">
         </div>
         <div class="mu-4">
-          <button id="btnStart" class="button">Start</button>
-          <button id="btnStop" class="button">Stop</button>
+          <button id="btnStart" class="button">Старт</button>
+          <button id="btnStop" class="button">Стоп</button>
         </div>
       </div>
       <div id="botting" class="tab-pane">
         <div class="flex">
           <div class="pl-4">
-            <span>Bots list</span>
+            <span>Список ботов</span>
             <ul id="botList" class="flex-colum" style="height: 11pc; width:15pc; margin-top: 0;"></ul>
             <div style="display: flex; position: relative; top: -12px; width:15pc;">
               <label class="container">
                 <input id="toggleAutoSelect" type="checkbox" checked>
                 <span class="checkmark"></span>
               </label>
-              <button style="flex: 1;" class="button" onclick="selectAll()">All</button>
-              <button style="flex: 1;" class="button" onclick="selectRemove()">None</button>
+              <button style="flex: 1;" class="button" onclick="selectAll()">Выбрать всех</button>
+              <button style="flex: 1;" class="button" onclick="selectRemove()">Убрать выбор</button>
             </div>
             <ul id="ul-options" class="flex-colum input-group selectors" style="height: 14pc; width:15pc; position: relative; top: -20px; opacity: 1;">
               <button class="button button-selected" data-target=".controls">Controls</button>
-              <button class="button" data-target=".chat">Chat</button>
-              <button class="button" data-target=".spam">Spam</button>
-              <button class="button" data-target=".setHotbatSlot">Set hotbar slot</button>
-              <button class="button" data-target=".clickWindow">Click window</button>
-              <button class="button" data-target=".moveDirection">Control move</button>
-              <button class="button" data-target=".look">Look</button>
-              <button class="button" data-target=".drop">Drop</button>
+              <button class="button" data-target=".chat">Чат</button>
+              <button class="button" data-target=".spam">Спам</button>
+              <button class="button" data-target=".setHotbatSlot">Сменить слот хотбара</button>
+              <button class="button" data-target=".clickWindow">Кликнуть в окне</button>
+              <button class="button" data-target=".moveDirection">Передвижение</button>
+              <button class="button" data-target=".look">Посмотреть</button>
+              <button class="button" data-target=".drop">Выкинуть</button>
               <button class="button" data-target=".antiafk">Anti-AFK</button>
               <button class="button" data-target=".killaura">Killaura</button>
             </ul>
@@ -160,46 +160,46 @@
                   <label class="label-text">Main controls</label>
                 </span>
                 <div class="input-group flex-colum">
-                  <button id="btnDisconnect" class="button">Disconnect</button>
-                  <button id="btnReconnect" class="button">Reconnect</button>
-                  <button id="btnUseHeld" class="button">Use Held</button>
-                  <button id="btnCloseWin" class="button">Close Window</button>
+                  <button id="btnDisconnect" class="button">Подключиться</button>
+                  <button id="btnReconnect" class="button">Переподключиться</button>
+                  <button id="btnUseHeld" class="button">ПКМ предметов в руке</button>
+                  <button id="btnCloseWin" class="button">Закрыть окно(GUI)</button>
                 </div>
               </div>
             </div>
             <div id="chat" class="chat functsBtn" style="display:none">
               <div class="input-group flex-colum center-elements">
                 <span class="label">
-                  <label class="label-text">Send message</label>
+                  <label class="label-text">Отправить сообщение</label>
                 </span>
                 <div class="input-group flex-colum">
                   <input id="chatMessage" class="input" type="text" placeholder="Message">
-                  <button id="btnChatMessage" class="button mu-4">Send</button>
+                  <button id="btnChatMessage" class="button mu-4">Отправить</button>
                 </div>
               </div>
             </div>
             <div id="spam" class="spam functsBtn" style="display:none">
               <div class="input-group center-elements flex-colum">
                 <span class="label">
-                  <label class="label-text">Spam message</label>
+                  <label class="label-text">Спамм</label>
                 </span>
                 <div class="input-group flex-colum">
-                  <input id="spamMessageBox" class="input" type="text" placeholder="Message">
-                  <input id="spamDelay" class="input" type="number" min="0" placeholder="Spam Delay 1000 (ms)">
+                  <input id="spamMessageBox" class="input" type="text" placeholder="Сообщение">
+                  <input id="spamDelay" class="input" type="number" min="0" placeholder="Задержка 1000 (ms)">
                 </div>
                 <div class="flex center-elements mu-4">
-                  <button id="startSpam" class="button">Start</button>
-                  <button id="stopSpam" class="button">Stop</button>
+                  <button id="startSpam" class="button">Старт</button>
+                  <button id="stopSpam" class="button">Стоп</button>
                 </div>
                 <div class="flex mu-4">
                   <label class="container">
-                    <label style="position: relative; top: -3px">Anti-spam</label>
+                    <label style="position: relative; top: -3px">Анти-Спам</label>
                     <input id="checkAntiSpam" type="checkbox">
                     <span class="checkmark"></span>
                   </label>
                 </div>
                 <div class="input-group flex-colum">
-                  <input id="antiSpamLength" class="input" type="number" min="1" placeholder="Random letters (Default 5)">
+                  <input id="antiSpamLength" class="input" type="number" min="1" placeholder="Рандомные символы (Дефолт 5)">
                 </div>
               </div>
             </div>
@@ -233,38 +233,38 @@
             <div id="clickWindow" class="clickWindow functsBtn" style="display:none">
               <div class="center-elements">
                 <span class="label">
-                  <label class="label-text">Click window slot</label>
+                  <label class="label-text">Нажать по слоты в окне</label>
                 </span>
               </div>
               <div class="input-group flex-colum">
                 <input id="windowValue" type="number" class="input" placeholder="Window slot">
                 <select id="clickWindowLorR" class="input">
-                  <option value="0" class="button">Left click</option>
-                  <option value="1" class="button">Right click</option>
+                  <option value="0" class="button">ЛКМ</option>
+                  <option value="1" class="button">ПКМ</option>
                 </select>
-                <button id="btnWindowClick" class="button">Click</button>
+                <button id="btnWindowClick" class="button">Сликнуть</button>
               </div>
             </div>
             <div id="moveDirection" class="moveDirection functsBtn" style="display:none">
               <div class="input-group flex-colum center-elements">
                 <div>
                   <span class="label">
-                    <label class="label-text">Control Move</label>
+                    <label class="label-text">Передвижение</label>
                   </span>
                 </div>
                 <div class="input-group flex-colum">
                   <select id="controlValue" class="select">
-                    <option value="forward">Forward</option>
-                    <option value="back">Backwards</option>
-                    <option value="left">Left</option>
-                    <option value="right">Right</option>
-                    <option value="jump">Jump</option>
-                    <option value="sneak">Sneak</option>
+                    <option value="forward">Вперед</option>
+                    <option value="back">Назад</option>
+                    <option value="left">Влево</option>
+                    <option value="right">Вправо</option>
+                    <option value="jump">Прыжок</option>
+                    <option value="sneak">Шифт</option>
                   </select>
                 </div>
                 <div class="input-group mu-4">
-                  <button id="startControl" class="button">Start</button>
-                  <button id="stopControl" class="button">Stop</button>
+                  <button id="startControl" class="button">Старт</button>
+                  <button id="stopControl" class="button">Стоп</button>
                 </div>
               </div>
             </div>
@@ -274,22 +274,22 @@
               </span>
               <div class="input-group">
                 <select id="lookValue" class="select">
-                  <option value="0">North</option>
-                  <option value="3">South</option>
-                  <option value="-1.5">East</option>
-                  <option value="1.5">West</option>
+                  <option value="0">Север</option>
+                  <option value="3">Юг</option>
+                  <option value="-1.5">Восток</option>
+                  <option value="1.5">Запад</option>
                 </select>
-                <button id="setLook" class="button">Set</button>
+                <button id="setLook" class="button">Повернуться</button>
               </div>
             </div>
             <div id="drop" class="drop functsBtn" style="display:none">
               <div class="input-group flex-colum center-elements">
                 <span class="label">
-                  <label class="label-text">Drop items</label>
+                  <label class="label-text">Выбросить шмотки</label>
                 </span>
                 <div class="input-group flex-colum ">
                   <input id="dropValue" class="input" type="number" placeholder="Inventory slot (Empty = all)">
-                  <button id="btnDrop" class="button">Drop</button>
+                  <button id="btnDrop" class="button">Выбросить</button>
                 </div>
               </div>
             </div>
@@ -299,8 +299,8 @@
                   <label class="label-text">Anti-AFK</label>
                 </span>
                 <div class="input-group flex-colum">
-                  <button id="startAfk" class="button">Start</button>
-                  <button id="stopAfk" class="button">Stop</button>
+                  <button id="startAfk" class="button">Старт</button>
+                  <button id="stopAfk" class="button">Стоп</button>
                 </div>
               </div>
             </div>
@@ -311,46 +311,46 @@
                 </span>
                 <div class="input-group flex-colum">
                   <label class="container">
-                    <label>Toggle killaura</label>
+                    <label>Вкл/Выкл киллку</label>
                     <input id="toggleka" type="checkbox">
                     <span class="checkmark"></span>
                     <hr>
                   </label>
-                  <span>Range</span>
+                  <span>Дистанция аттаки</span>
                   <input id="kaRange" type="range" min="1" max="6" value="1" class="slider">
                   <div class="flex" style="margin-top: 10px; position: relative; left: -35px;">
                     <label class="container">
-                      <label>Delay</label>
+                      <label>Задержка</label>
                     </label>
                     <input id="kaDelay" type="number" min="0" class="input-sm m-1" placeholder="(500ms)">
                   </div>
                   <div class="flex">
                     <label class="container" style="margin-top: 10px;">
-                      <label>Look at target</label>
+                      <label>Смотреть на цель</label>
                       <input id="toggleKaLook" type="checkbox">
                       <span class="checkmark"></span>
                     </label>
                   </div>
                   <div class="flex">
                     <label class="container" style="margin-top: 10px;">
-                      <label>Player</label>
+                      <label>Игроки</label>
                       <input id="kaTp" type="checkbox">
                       <span class="checkmark"></span>
                     </label>
                     <label class="container" style="margin-top: 10px; margin-left: 10px;">
-                      <label>Vehicle</label>
+                      <label>Транспорт</label>
                       <input id="kaTv" type="checkbox">
                       <span class="checkmark"></span>
                     </label>
                   </div>
                   <div class="flex">
                     <label class="container" style="margin-top: 10px;">
-                      <label>Mob</label>
+                      <label>Мобы</label>
                       <input id="kaTm" type="checkbox">
                       <span class="checkmark"></span>
                     </label>
                     <label class="container" style="margin-top: 10px; margin-left: 30px;">
-                      <label>Animal</label>
+                      <label>Животные</label>
                       <input id="kaTa" type="checkbox">
                       <span class="checkmark"></span>
                     </label>
@@ -363,11 +363,11 @@
             <ul id="chatBox" style="height: 25pc; width:20pc; user-select: text;"></ul>
             <div class="flex center-elements">
               <label class="container">
-                <label>Show chat</label>
+                <label>Показывать чат</label>
                 <input id="showChatCheck" type="checkbox" checked>
                 <span class="checkmark"></span>
               </label>
-              <button class="button m-4" onclick="clearChat()">Clear logs</button>
+              <button class="button m-4" onclick="clearChat()">Очистить логи</button>
             </div>
           </div>
         </div>
@@ -385,17 +385,17 @@
           <div class="m-4">
             <div class="border">
               <label class="container">
-                <label>Run on connect</label>
+                <label>Запускать при присоединении</label>
                 <input id="scriptCheck" type="checkbox">
                 <span class="checkmark"></span>
               </label>
               <label class="container">
-                <label>Run on respawn</label>
+                <label>Запускать при респавнеn</label>
                 <input id="scriptCheckOnDeath" type="checkbox">
                 <span class="checkmark"></span>
               </label>
               <label class="container">
-                <label>Run on world change/respawn</label>
+                <label>Запускать при перхода в др. мир/респавне</label>
                 <input id="scriptCheckOnRespawn" type="checkbox">
                 <span class="checkmark"></span>
               </label>
@@ -412,9 +412,9 @@
               <textarea id="proxyTextBox" class="textbox" placeholder="Proxy list"></textarea>
             </div>
             <div class="flex">
-              <button id="buttonStartCheckBoxList" class="button">Check list</button>
-              <button id="buttonStopCheck" class="button">Stop</button>
-              <button class="button" onclick="removeDuplicateLines()">UnDupe</button>
+              <button id="buttonStartCheckBoxList" class="button">Проверить лист</button>
+              <button id="buttonStopCheck" class="button">Стоп</button>
+              <button class="button" onclick="removeDuplicateLines()">Убрать дуплицированные строчки</button>
             </div>
           </div>
           <div class="m-4">
@@ -422,17 +422,17 @@
             <div class="border">
 
               <div>
-                <label class="label-text">Proxy file:</label>
+                <label class="label-text">Файл прокси:</label>
                 <input id="proxyFilePath" type="file" accept=".txt" class="select-file">
               </div>
 
               <div class="mu-2">
-                <span class="label-text"> Delay:</span>
+                <span class="label-text"> Задержка:</span>
                 <input type="number" min="1" id="proxyCheckDelay" class="text-input input-sm" placeholder="100(ms)">
               </div>
               
               <div class="mu-2">
-                <span class="label-text"> Proxy timeout:</span>
+                <span class="label-text"> Время таймаута прокси:</span>
                 <input type="number" min="1" id="proxyTimeout" class="text-input input-sm" placeholder="1000(ms)">
               </div>
 
@@ -443,7 +443,7 @@
                     <option value="5">SOCKS5</option>
                   </select>
                 </div>
-                <button class="button m-1" id="checkProxyfile">Check file</button>
+                <button class="button m-1" id="checkProxyfile">Проверить файл</button>
               </div>
             </div>
             
@@ -464,7 +464,7 @@
               <div class="flex">
 
                 <label class="container">
-                  <label>Use proxy</label>
+                  <label>Юзать прокси</label>
                   <input id="useProxy" type="checkbox">
                   <span class="checkmark"></span>
                 </label>
@@ -486,53 +486,53 @@
         <div class="flex">
           <div class="border">
             <span class="label" style="position: relative; top:-25px">
-              <label class="label-text">Bot settings</label>
+              <label class="label-text">Настройки ботов</label>
             </span>
             <div class="flex">
               <label class="container">
-                <label>Linear</label>
+                <label>Задержка между ботами</label>
               </label>
               <input id="linearValue" type="number" min="0" class="input-sm m-1" placeholder="delay (0ms)">
               <img src="./assets/icons/info.svg" class="icon-sm hpop" data-popup="popupLinear">
               <div class="popup" id="popupLinear">
-                <span>Delay between each bots</span>
+                <span>Задержка предев выполнением команды/действий между ботами</span>
               </div>
             </div>
             <div class="flex">
               <label class="container">
-                <label>Auto reconnect</label>
+                <label>Авто реконект</label>
                 <input id="checkboxAutoRc" type="checkbox">
                 <span class="checkmark"></span>
               </label>
               <input id="reconDelay" type="number" min="0" class="input-sm m-1" placeholder="delay (0ms)">
             </div>
             <label class="container">
-              <label>Sprint</label>
+              <label>Авто спринт</label>
               <input id="checkboxSprint" type="checkbox">
               <span class="checkmark"></span>
             </label>
             <label class="container">
-              <label>Ignore selected bots in Killaura</label>
+              <label>Не бить своих ботиков киллкой</label>
               <input id="checkKaIgnoreSelected" type="checkbox">
               <span class="checkmark"></span>
             </label>
           </div>
           <div class="border m-4" style="width: 275px;">
             <span class="label" style="position: relative; top:-25px">
-              <label class="label-text">Theme</label>
+              <label class="label-text">Тема</label>
             </span>
             <div>
               <input id="customCssFile" type="file" accept=".css" class="select-file">
-              <button class="button" id="btnSaveTheme">Save</button>
+              <button class="button" id="btnSaveTheme">Сохранить</button>
             </div>
           </div>
         </div>
         <div class="border mu-4" style="width: 420px;">
           <span class="label" style="position: relative; top:-25px">
-            <label class="label-text">Proxy settings</label>
+            <label class="label-text">Настройки прокси</label>
           </span>
           <label class="container">
-            <label>Random proxy order</label>
+            <label>Рандомный порядок прокси</label>
             <input id="proxyOrderRnd" type="checkbox">
             <span class="checkmark"></span>
           </label>
@@ -541,12 +541,12 @@
       <div id="about" class="tab-pane" style="width: 800px;">
           <div class="flex center-elements">
             <img src="./assets/icons/icon.png" style="width: 50px;">
-            <h1>TrafficerMC</h1>
+            <h1>HyperBots</h1>
           </div>
           <div class="flex center-elements">
-            <img class="icon" src="./assets/icons/discord.svg" onclick="shell.openExternal('https://discord.gg/m6b8Pw4NR8')">
-            <img class="icon" src="./assets/icons/youtube.svg" onclick="shell.openExternal('https://youtube.com/rattleshyper')">
-            <img class="icon" src="./assets/icons/github.svg" style="width: 40px;" onclick="shell.openExternal('https://github.com/RattlesHyper/TrafficerMC')">
+            <img class="icon" src="./assets/icons/discord.svg" onclick="shell.openExternal('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
+            <img class="icon" src="./assets/icons/youtube.svg" onclick="shell.openExternal('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
+            <img class="icon" src="./assets/icons/github.svg" style="width: 40px;" onclick="shell.openExternal('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
           </div>
         </div>
       </div>
@@ -554,22 +554,22 @@
     <div class="downbar flex">
       <span class="label">
         <img src="./assets/icons/user.svg" class="icon-sm">
-        <label>Bots:</label>
+        <label>Боты:</label>
         <label id="downbarBotCount" class="m-1">0</label>
       </span>
       <span class="label">
         <img src="./assets/icons/clock.svg" class="icon-sm">
-        <label>Uptime:</label>
+        <label>Аптайм:</label>
         <label id="uptime" class="m-1">00:00</label>
       </span>
       <span id="outdatedVersion" class="label" style="display:none" onClick="shell.openExternal('https://github.com/RattlesHyper/TrafficerMC/releases')">
         <img src="./assets/icons/alert-triangle.svg" class="icon-sm error-icon">
-        <label class="m-1 error-text" style="cursor: pointer">Outdated version</label>
+        <label class="m-1 error-text" style="cursor: pointer">Супр анал</label>
       </span>
 
       <span id="proxyInfoDownbar" style="display: none" class="label">
         <img src="./assets/icons/code.svg" class="icon-sm">
-        <label>Checking:</label>
+        <label>Проверка:</label>
         <label id="proxyInfoDownbarCount" class="m-1">0/0</label>
       </span>
 

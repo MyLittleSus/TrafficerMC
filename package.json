@@ -1,9 +1,9 @@
 {
-  "name": "trafficermc",
-  "author": "RattlesHyper",
-  "maintainer": "RattlesHyper",
+  "name": "hyperbots",
+  "author": "vpb_",
+  "maintainer": "vpb_",
   "version": "2.3.0",
-  "description": "A Minecraft botting tool with Anti-AFK, Chat spammer, Inventory/Chest manager features.",
+  "description": "Minecraft botting tool",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
@@ -27,12 +27,12 @@
     "electron-builder": "^23.6.0"
   },
   "build": {
-    "appId": "com.rattleshyper.trafficermc",
-    "productName": "TrafficerMC",
-    "copyright": "Copyright © 2022 RattlesHyper",
+    "appId": "com.vpb.hyperbots",
+    "productName": "HyperBots",
+    "copyright": "Copyright © 2022 vpb_",
     "win": {
       "target": "portable",
-      "publisherName": "RattlesHyper",
+      "publisherName": "vpb_",
       "icon": "src/assets/icons/icon.ico"
     },
     "linux": {
